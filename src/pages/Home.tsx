@@ -228,8 +228,8 @@ const Home = () => {
         <div className="container mx-auto px-4">
           {/* Accroche professionnelle */}
           <div className="text-center mb-12">
-            <div className="inline-block px-4 py-2 bg-white/10 rounded-full text-sm font-semibold text-white/90 mb-4">
-              💡 Formations d'Excellence
+            <div className="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold text-white mb-4">
+              Formations d'Excellence
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Investissez dans votre avenir professionnel</h2>
             <div className="max-w-4xl mx-auto space-y-4">
