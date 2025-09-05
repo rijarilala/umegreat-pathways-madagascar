@@ -8,7 +8,9 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Eligibility from "./pages/Eligibility";
-import CanadaImmigration from "./pages/CanadaImmigration";
+import ImmigrationPermanente from "./pages/ImmigrationPermanente";
+import RegroupementFamilial from "./pages/RegroupementFamilial";
+import EtudesCanada from "./pages/EtudesCanada";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -34,7 +36,9 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/eligibility" element={<Eligibility />} />
-            <Route path="/canada-immigration" element={<CanadaImmigration />} />
+            <Route path="/immigration-permanente" element={<ImmigrationPermanente />} />
+            <Route path="/regroupement-familial" element={<RegroupementFamilial />} />
+            <Route path="/etudes-canada" element={<EtudesCanada />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/formations" element={<FormationsIndex />} />

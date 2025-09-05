@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
+import { Menu, X, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,12 +17,19 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     { name: "Accueil", href: "/" },
     { name: "À propos", href: "/about" },
     { name: "Services", href: "/services" },
-    { name: "Immigration Canada", href: "/canada-immigration" },
     { name: "Formations", href: "/formations" },
     { name: "Test d'éligibilité", href: "/eligibility" },
     { name: "FAQ", href: "/faq" },
     { name: "Contact", href: "/contact" },
   ];
+
+  const canadaLinks = [
+    { name: "Immigration Permanente", href: "/immigration-permanente" },
+    { name: "Regroupement Familial", href: "/regroupement-familial" },
+    { name: "Études au Canada", href: "/etudes-canada" },
+  ];
+
+  const isCanadaActive = canadaLinks.some(link => location.pathname === link.href);
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -38,7 +51,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden md:flex items-center space-x-8">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -50,6 +63,30 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   {item.name}
                 </Link>
               ))}
+              
+              {/* Canada Dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger className={`flex items-center space-x-1 text-sm font-medium transition-colors hover:text-primary ${
+                  isCanadaActive ? "text-primary" : "text-foreground"
+                }`}>
+                  <span>Canada</span>
+                  <ChevronDown className="h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-background border border-border shadow-elegant">
+                  {canadaLinks.map((item) => (
+                    <DropdownMenuItem key={item.name} asChild>
+                      <Link
+                        to={item.href}
+                        className={`w-full text-sm font-medium transition-colors hover:text-primary ${
+                          isActive(item.href) ? "text-primary" : "text-foreground"
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
             </nav>
 
             {/* CTA Button */}
@@ -84,6 +121,26 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     {item.name}
                   </Link>
                 ))}
+                
+                {/* Canada submenu for mobile */}
+                <div className="space-y-2">
+                  <span className="text-sm font-medium text-muted-foreground">Canada</span>
+                  <div className="pl-4 space-y-2">
+                    {canadaLinks.map((item) => (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        className={`block text-sm font-medium transition-colors hover:text-primary ${
+                          isActive(item.href) ? "text-primary" : "text-foreground"
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                
                 <Button variant="hero" size="sm" asChild className="w-fit">
                   <Link to="/eligibility">Test gratuit</Link>
                 </Button>
@@ -140,8 +197,18 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/services" className="hover:text-primary-foreground transition-colors">
-                    Immigration Canada
+                  <Link to="/immigration-permanente" className="hover:text-primary-foreground transition-colors">
+                    Immigration Permanente
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/regroupement-familial" className="hover:text-primary-foreground transition-colors">
+                    Regroupement Familial
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/etudes-canada" className="hover:text-primary-foreground transition-colors">
+                    Études au Canada
                   </Link>
                 </li>
                 <li>
