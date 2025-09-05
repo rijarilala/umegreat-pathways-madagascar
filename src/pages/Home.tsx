@@ -224,13 +224,37 @@ const Home = () => {
       </section>
 
       {/* Section Packs de Formation */}
-      <section className="py-20 bg-gradient-primary text-white">
+      <section className="py-16 bg-gradient-primary text-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Nos Packs de Formation</h2>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              Des formations complètes conçues pour accélérer votre réussite professionnelle
-            </p>
+          {/* Accroche professionnelle */}
+          <div className="text-center mb-12">
+            <div className="inline-block px-4 py-2 bg-white/10 rounded-full text-sm font-semibold text-white/90 mb-4">
+              💡 Formations d'Excellence
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Investissez dans votre avenir professionnel</h2>
+            <div className="max-w-4xl mx-auto space-y-4">
+              <p className="text-xl text-white/95 font-medium">
+                Nos packs de formation sont conçus par des experts pour transformer votre potentiel en succès concret.
+              </p>
+              <p className="text-lg text-white/80">
+                Que vous soyez en recherche d'emploi, en reconversion ou souhaitiez évoluer en RH, 
+                nos programmes personnalisés vous donnent les clés pour atteindre vos objectifs professionnels.
+              </p>
+              <div className="flex flex-wrap justify-center gap-6 mt-8 text-white/90">
+                <div className="flex items-center space-x-2">
+                  <CheckCircle size={20} className="text-accent" />
+                  <span>Approche pratique et opérationnelle</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle size={20} className="text-accent" />
+                  <span>Suivi personnalisé inclus</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle size={20} className="text-accent" />
+                  <span>Résultats garantis</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
