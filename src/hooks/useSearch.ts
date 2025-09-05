@@ -10,12 +10,24 @@ export interface SearchResult extends SearchItem {
 export const useSearch = () => {
   const [query, setQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Tous');
-  const [isSearching, setIsSearching] = useState(false);
+
+  // Fonction d'highlight en dehors du useMemo
+  const highlightText = (text: string, searchQuery: string): string => {
+    if (!searchQuery.trim()) return text;
+    
+    const terms = searchQuery.split(' ').filter(term => term.length > 0);
+    let highlightedText = text;
+    
+    terms.forEach(term => {
+      const regex = new RegExp(`(${term})`, 'gi');
+      highlightedText = highlightedText.replace(regex, '<mark class="bg-primary/20 px-1 rounded">$1</mark>');
+    });
+    
+    return highlightedText;
+  };
 
   const searchResults = useMemo(() => {
     if (!query.trim()) return [];
-
-    setIsSearching(true);
     
     const searchTerms = query.toLowerCase().split(' ').filter(term => term.length > 0);
     
@@ -63,23 +75,8 @@ export const useSearch = () => {
       .sort((a, b) => b.score - a.score)
       .slice(0, 10); // Limiter à 10 résultats
 
-    setTimeout(() => setIsSearching(false), 100);
     return results;
   }, [query, selectedCategory]);
-
-  const highlightText = (text: string, searchQuery: string): string => {
-    if (!searchQuery.trim()) return text;
-    
-    const terms = searchQuery.split(' ').filter(term => term.length > 0);
-    let highlightedText = text;
-    
-    terms.forEach(term => {
-      const regex = new RegExp(`(${term})`, 'gi');
-      highlightedText = highlightedText.replace(regex, '<mark class="bg-primary/20 px-1 rounded">$1</mark>');
-    });
-    
-    return highlightedText;
-  };
 
   const clearSearch = () => {
     setQuery('');
@@ -92,7 +89,7 @@ export const useSearch = () => {
     selectedCategory,
     setSelectedCategory,
     searchResults,
-    isSearching,
+    isSearching: false, // Simplifié pour éviter les problèmes d'état
     clearSearch,
     hasResults: searchResults.length > 0,
     hasQuery: query.trim().length > 0
