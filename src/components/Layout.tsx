@@ -62,18 +62,13 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3 transition-all duration-300">
               <img 
-                src="/umegreat-pro-logo-full.png" 
+                src="/umegreat-pro-logo.png" 
                 alt="UMEGREAT PRO" 
                 className={`transition-all duration-300 ${
-                  isScrolled ? 'h-8 w-8' : 'h-12 w-12'
+                  isScrolled ? 'h-10 w-10' : 'h-16 w-16'
                 }`}
               />
               <div className="transition-all duration-300">
-                <h1 className={`font-bold text-primary transition-all duration-300 ${
-                  isScrolled ? 'text-base' : 'text-xl'
-                }`}>
-                  UMEGREAT PRO
-                </h1>
                 <p className={`text-muted-foreground transition-all duration-300 ${
                   isScrolled ? 'text-xs' : 'text-sm'
                 }`}>
