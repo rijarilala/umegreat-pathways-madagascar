@@ -2,99 +2,83 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { 
-  FileText,
-  MessageSquare,
-  Search,
-  Compass,
-  Linkedin,
-  Briefcase,
-  Clock,
-  Users,
-  ArrowRight,
-  BookOpen,
-  Star
-} from "lucide-react";
-
+import { FileText, MessageSquare, Search, Compass, Linkedin, Briefcase, Clock, Users, ArrowRight, BookOpen, Star } from "lucide-react";
 const FormationsIndex = () => {
-  const formations = [
-    {
-      id: "cv-impactant",
-      title: "CV Impactant",
-      description: "Créez un CV qui vous démarque et maximise vos chances d'obtenir des entretiens",
-      icon: FileText,
-      duration: "2 jours",
-      audience: "Tous niveaux",
-      level: "Essentiel",
-      color: "text-blue-600",
-      bgColor: "bg-blue-50"
-    },
-    {
-      id: "lettre-motivation",
-      title: "Lettre de Motivation Convaincante",
-      description: "Rédigez des lettres qui captent l'attention et suscitent l'envie de vous rencontrer",
-      icon: MessageSquare,
-      duration: "1,5 jour",
-      audience: "Tous profils",
-      level: "Essentiel",
-      color: "text-green-600",
-      bgColor: "bg-green-50"
-    },
-    {
-      id: "recherche-emploi",
-      title: "Recherche du Premier ou Nouveau Emploi",
-      description: "Maîtrisez toutes les techniques pour décrocher l'emploi qui vous correspond",
-      icon: Search,
-      duration: "3 jours",
-      audience: "Demandeurs d'emploi",
-      level: "Complet",
-      color: "text-purple-600",
-      bgColor: "bg-purple-50"
-    },
-    {
-      id: "transition-vie-active",
-      title: "Transition vers la Vie Active",
-      description: "Préparez-vous efficacement à intégrer le monde professionnel avec confiance",
-      icon: Compass,
-      duration: "2,5 jours",
-      audience: "Jeunes diplômés",
-      level: "Fondamental",
-      color: "text-orange-600",
-      bgColor: "bg-orange-50"
-    },
-    {
-      id: "linkedin",
-      title: "Création et Optimisation LinkedIn",
-      description: "Transformez votre profil LinkedIn en véritable outil de réussite professionnelle",
-      icon: Linkedin,
-      duration: "2 jours",
-      audience: "Tous professionnels",
-      level: "Digital",
-      color: "text-blue-700",
-      bgColor: "bg-blue-100"
-    },
-    {
-      id: "grh",
-      title: "Gestion des Ressources Humaines",
-      description: "Développez une expertise complète en GRH pour optimiser la performance de vos équipes",
-      icon: Briefcase,
-      duration: "5 jours",
-      audience: "Managers & RH",
-      level: "Expert",
-      color: "text-red-600",
-      bgColor: "bg-red-50"
-    }
-  ];
-
-  const stats = [
-    { label: "Formations professionnelles", value: "6" },
-    { label: "Heures de formation", value: "100+" },
-    { label: "Participants formés", value: "500+" },
-    { label: "Taux de satisfaction", value: "95%" }
-  ];
-
-  return (
-    <div className="space-y-0">
+  const formations = [{
+    id: "cv-impactant",
+    title: "CV Impactant",
+    description: "Créez un CV qui vous démarque et maximise vos chances d'obtenir des entretiens",
+    icon: FileText,
+    duration: "2 jours",
+    audience: "Tous niveaux",
+    level: "Essentiel",
+    color: "text-blue-600",
+    bgColor: "bg-blue-50"
+  }, {
+    id: "lettre-motivation",
+    title: "Lettre de Motivation Convaincante",
+    description: "Rédigez des lettres qui captent l'attention et suscitent l'envie de vous rencontrer",
+    icon: MessageSquare,
+    duration: "1,5 jour",
+    audience: "Tous profils",
+    level: "Essentiel",
+    color: "text-green-600",
+    bgColor: "bg-green-50"
+  }, {
+    id: "recherche-emploi",
+    title: "Recherche du Premier ou Nouveau Emploi",
+    description: "Maîtrisez toutes les techniques pour décrocher l'emploi qui vous correspond",
+    icon: Search,
+    duration: "3 jours",
+    audience: "Demandeurs d'emploi",
+    level: "Complet",
+    color: "text-purple-600",
+    bgColor: "bg-purple-50"
+  }, {
+    id: "transition-vie-active",
+    title: "Transition vers la Vie Active",
+    description: "Préparez-vous efficacement à intégrer le monde professionnel avec confiance",
+    icon: Compass,
+    duration: "2,5 jours",
+    audience: "Jeunes diplômés",
+    level: "Fondamental",
+    color: "text-orange-600",
+    bgColor: "bg-orange-50"
+  }, {
+    id: "linkedin",
+    title: "Création et Optimisation LinkedIn",
+    description: "Transformez votre profil LinkedIn en véritable outil de réussite professionnelle",
+    icon: Linkedin,
+    duration: "2 jours",
+    audience: "Tous professionnels",
+    level: "Digital",
+    color: "text-blue-700",
+    bgColor: "bg-blue-100"
+  }, {
+    id: "grh",
+    title: "Gestion des Ressources Humaines",
+    description: "Développez une expertise complète en GRH pour optimiser la performance de vos équipes",
+    icon: Briefcase,
+    duration: "5 jours",
+    audience: "Managers & RH",
+    level: "Expert",
+    color: "text-red-600",
+    bgColor: "bg-red-50"
+  }];
+  const stats = [{
+    label: "Formations professionnelles",
+    value: "6"
+  }, {
+    label: "Heures de formation",
+    value: "100+"
+  }, {
+    label: "Participants formés",
+    value: "500+"
+  }, {
+    label: "Taux de satisfaction",
+    value: "95%"
+  }];
+  return <div className="space-y-0">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-hero text-primary-foreground">
         <div className="container mx-auto px-4">
@@ -122,22 +106,7 @@ const FormationsIndex = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Formations Grid */}
       <section className="py-20 bg-background">
@@ -151,8 +120,7 @@ const FormationsIndex = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {formations.map((formation) => (
-              <Card key={formation.id} className="hover:shadow-elegant transition-all duration-300 group">
+            {formations.map(formation => <Card key={formation.id} className="hover:shadow-elegant transition-all duration-300 group">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-4">
                     <div className={`p-3 rounded-lg ${formation.bgColor}`}>
@@ -188,8 +156,7 @@ const FormationsIndex = () => {
                     </Link>
                   </Button>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -268,8 +235,6 @@ const FormationsIndex = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default FormationsIndex;
