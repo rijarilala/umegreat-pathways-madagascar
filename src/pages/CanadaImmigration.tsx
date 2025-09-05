@@ -4,6 +4,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { MapPin, Phone, Mail, MessageCircle, Users, GraduationCap, Heart, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/canada-immigration-hero.jpg";
+import professionalsImage from "@/assets/canada-professionals.jpg";
+import universityImage from "@/assets/canada-university.jpg";
+import familyImage from "@/assets/canada-family-reunion.jpg";
 
 const CanadaImmigration = () => {
   return (
@@ -77,7 +80,7 @@ const CanadaImmigration = () => {
             </div>
             <div className="relative">
               <img 
-                src="/api/placeholder/600/400" 
+                src={professionalsImage} 
                 alt="Professionnels au Canada" 
                 className="rounded-lg shadow-2xl"
               />
@@ -92,7 +95,7 @@ const CanadaImmigration = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative md:order-1">
               <img 
-                src="/api/placeholder/600/400" 
+                src={universityImage} 
                 alt="Campus universitaire canadien" 
                 className="rounded-lg shadow-2xl"
               />
@@ -183,7 +186,7 @@ const CanadaImmigration = () => {
             </div>
             <div className="relative">
               <img 
-                src="/api/placeholder/600/400" 
+                src={familyImage} 
                 alt="Famille réunie au Canada" 
                 className="rounded-lg shadow-2xl"
               />
