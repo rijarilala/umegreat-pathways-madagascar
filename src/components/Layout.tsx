@@ -11,6 +11,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     { name: "Accueil", href: "/" },
     { name: "À propos", href: "/about" },
     { name: "Services", href: "/services" },
+    { name: "Immigration Canada", href: "/canada-immigration" },
     { name: "Formations", href: "/formations" },
     { name: "Test d'éligibilité", href: "/eligibility" },
     { name: "FAQ", href: "/faq" },
