@@ -8,6 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { SearchBar } from "@/components/SearchBar";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -124,8 +125,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </DropdownMenu>
             </nav>
 
-            {/* CTA Button */}
+            {/* CTA Button and Search */}
             <div className="hidden md:flex items-center space-x-4">
+              <SearchBar />
               <Button variant="hero" size="sm" asChild>
                 <Link to="/eligibility" onClick={() => window.scrollTo(0, 0)}>Évaluer votre éligibilité</Link>
               </Button>
@@ -143,6 +145,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           {/* Mobile Navigation */}
           {isMenuOpen && (
             <div className="md:hidden py-4 border-t border-border">
+              {/* Mobile Search */}
+              <div className="mb-6">
+                <SearchBar variant="inline" placeholder="Rechercher..." />
+              </div>
+              
               <nav className="flex flex-col space-y-4">
                 {navigation.map((item) => (
                     <Link
