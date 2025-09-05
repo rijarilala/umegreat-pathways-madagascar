@@ -48,10 +48,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3">
               <img 
-                src="/lovable-uploads/d44a6ee7-9e7b-486d-99d8-7e8c5daae96e.png" 
+                src="/lovable-uploads/e6db913e-20f5-43fb-8d43-b731c331b66d.png" 
                 alt="UMEGREAT PRO" 
-                className="h-8 object-contain"
+                className="h-12 w-12 object-contain"
               />
+              <div>
+                <h1 className="font-bold text-lg text-primary">UMEGREAT PRO</h1>
+                <p className="text-xs text-muted-foreground">Cabinet conseil</p>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
