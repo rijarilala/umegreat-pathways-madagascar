@@ -1,4 +1,4 @@
-import { ArrowRight, Target, TrendingUp, Users, CheckCircle } from "lucide-react";
+import { ArrowRight, Target, TrendingUp, Users, CheckCircle, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import conseilOrientationHero from "@/assets/conseil-orientation-hero.jpg";
@@ -51,7 +51,7 @@ const ConseilOrientation = () => {
             Nos Services d'Orientation Professionnelle
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <Target className="h-12 w-12 text-primary mb-4" />
@@ -125,6 +125,32 @@ const ConseilOrientation = () => {
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                     <span>Suivi des objectifs professionnels</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <Briefcase className="h-12 w-12 text-primary mb-4" />
+                <CardTitle className="text-xl">Coaching Personnalisé</CardTitle>
+                <CardDescription>
+                  Accompagnement recherche d'emploi
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                    <span>Conseils sur la recherche d'emploi</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                    <span>Rédaction de CV et lettres de motivation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                    <span>Préparation aux entretiens</span>
                   </li>
                 </ul>
               </CardContent>

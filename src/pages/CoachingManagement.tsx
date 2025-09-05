@@ -51,7 +51,7 @@ const CoachingManagement = () => {
             Nos Services de Coaching Professionnel
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <Users className="h-12 w-12 text-primary mb-4" />
@@ -78,31 +78,6 @@ const CoachingManagement = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Target className="h-12 w-12 text-primary mb-4" />
-                <CardTitle className="text-xl">Coaching Personnalisé</CardTitle>
-                <CardDescription>
-                  Accompagnement individuel
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
-                    <span>Recherche d'emploi stratégique</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
-                    <span>Rédaction CV et lettres</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
-                    <span>Préparation aux entretiens</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
 
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
