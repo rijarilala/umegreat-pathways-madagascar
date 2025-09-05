@@ -86,11 +86,11 @@ const Home = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Nos domaines d'expertise</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Deux piliers d'excellence pour votre développement professionnel et personnel
+              Trois piliers d'excellence pour votre développement professionnel et personnel
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
             {/* RH Card */}
             <Card className="relative overflow-hidden border-primary/20 hover:shadow-elegant transition-all duration-300">
               <div className="absolute top-0 right-0 bg-gradient-accent text-accent-foreground px-3 py-1 rounded-bl-lg">
@@ -179,6 +179,54 @@ const Home = () => {
                 </div>
                 <div className="md:w-1/3">
                   <img src={canadaImage} alt="Immigration Canada" className="w-full h-full object-cover" />
+                </div>
+              </div>
+            </Card>
+
+            {/* Formations Card */}
+            <Card className="relative overflow-hidden border-primary/20 hover:shadow-elegant transition-all duration-300">
+              <div className="absolute top-0 right-0 bg-gradient-accent text-accent-foreground px-3 py-1 rounded-bl-lg">
+                <span className="text-sm font-semibold">Point Fort</span>
+              </div>
+              <div className="flex flex-col md:flex-row">
+                <div className="md:w-2/3 p-6">
+                  <CardHeader className="p-0 mb-4">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <div className="bg-primary/10 p-3 rounded-lg">
+                        <BookOpen className="text-primary" size={24} />
+                      </div>
+                      <CardTitle className="text-xl">Formations Professionnelles</CardTitle>
+                    </div>
+                    <CardDescription>
+                      Développement des compétences pour votre réussite professionnelle
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="p-0">
+                    <ul className="space-y-2 mb-4">
+                      <li className="flex items-center space-x-2">
+                        <CheckCircle size={16} className="text-accent" />
+                        <span className="text-sm">CV et lettres de motivation impactants</span>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <CheckCircle size={16} className="text-accent" />
+                        <span className="text-sm">Optimisation LinkedIn et recherche d'emploi</span>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <CheckCircle size={16} className="text-accent" />
+                        <span className="text-sm">Transition vers la vie active</span>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <CheckCircle size={16} className="text-accent" />
+                        <span className="text-sm">Gestion des ressources humaines</span>
+                      </li>
+                    </ul>
+                    <Button variant="default" asChild>
+                      <Link to="/formations">Découvrir nos formations</Link>
+                    </Button>
+                  </CardContent>
+                </div>
+                <div className="md:w-1/3">
+                  <img src={hrImage} alt="Formations professionnelles" className="w-full h-full object-cover" />
                 </div>
               </div>
             </Card>
