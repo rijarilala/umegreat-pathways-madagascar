@@ -17,8 +17,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.scrollY > 20;
-      setIsScrolled(scrolled);
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -57,23 +56,24 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         isScrolled ? 'py-2' : 'py-4'
       }`}>
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
+          <div className={`flex items-center justify-between transition-all duration-300 ${
+            isScrolled ? 'h-12' : 'h-20'
+          }`}>
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3 transition-all duration-300">
               <img 
                 src="/umegreat-pro-logo.png" 
                 alt="UMEGREAT PRO" 
-                className={`object-contain transition-all duration-300 ${
+                className={`transition-all duration-300 ${
                   isScrolled ? 'h-10 w-10' : 'h-16 w-16'
                 }`}
               />
               <div className="transition-all duration-300">
-                <h1 className={`font-bold text-primary transition-all duration-300 ${
-                  isScrolled ? 'text-lg' : 'text-xl'
-                }`}>UMEGREAT PRO</h1>
                 <p className={`text-muted-foreground transition-all duration-300 ${
                   isScrolled ? 'text-xs' : 'text-sm'
-                }`}>Cabinet conseil</p>
+                }`}>
+                  Cabinet conseil
+                </p>
               </div>
             </Link>
 
@@ -245,7 +245,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </header>
 
       {/* Main Content */}
-      <main className={`transition-all duration-300 ${isScrolled ? 'pt-20' : 'pt-24'}`}>{children}</main>
+      <main className="pt-24">{children}</main>
 
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground">
@@ -253,12 +253,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <img 
-                  src="/umegreat-pro-logo.png" 
-                  alt="UMEGREAT PRO" 
-                  className="h-10 w-10 object-contain"
-                />
+              <div className="flex items-center space-x-2">
+                <div className="bg-accent p-2 rounded-lg">
+                  <span className="text-accent-foreground font-bold">UP</span>
+                </div>
                 <h3 className="font-bold text-lg">UMEGREAT PRO</h3>
               </div>
               <p className="text-primary-foreground/80 text-sm">
