@@ -218,7 +218,7 @@ const Home = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Pack Réussite */}
-            <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
+            <Card className="bg-white/10 border-white/20 backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
                   <div className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold">
@@ -250,20 +250,27 @@ const Home = () => {
                     <span className="text-white/90">Suivi personnalisé 3 mois</span>
                   </li>
                 </ul>
-                <Button variant="accent" className="w-full" size="lg" asChild>
-                  <Link to="/formations">
-                    En savoir plus <ArrowRight className="ml-2" size={20} />
-                  </Link>
-                </Button>
+                <div className="space-y-3">
+                  <Button variant="accent" className="w-full" size="lg" asChild>
+                    <Link to="/formations#packs" onClick={() => window.scrollTo(0, 0)}>
+                      En savoir plus <ArrowRight className="ml-2" size={20} />
+                    </Link>
+                  </Button>
+                  <Button variant="outline" className="w-full bg-white/10 border-white text-white hover:bg-white hover:text-primary" size="lg" asChild>
+                    <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+                      S'inscrire maintenant
+                    </Link>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
 
             {/* Pack Formation RH */}
-            <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
+            <Card className="bg-white/10 border-white/20 backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
                   <div className="bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-semibold">
-                    Pack Pro
+                    Pack Expert
                   </div>
                   <Users className="text-accent" size={24} />
                 </div>
@@ -291,11 +298,18 @@ const Home = () => {
                     <span className="text-white/90">Certification professionnelle</span>
                   </li>
                 </ul>
-                <Button variant="secondary" className="w-full" size="lg" asChild>
-                  <Link to="/formations">
-                    Découvrir le pack <ArrowRight className="ml-2" size={20} />
-                  </Link>
-                </Button>
+                <div className="space-y-3">
+                  <Button variant="secondary" className="w-full" size="lg" asChild>
+                    <Link to="/formations#packs" onClick={() => window.scrollTo(0, 0)}>
+                      Découvrir le pack <ArrowRight className="ml-2" size={20} />
+                    </Link>
+                  </Button>
+                  <Button variant="outline" className="w-full bg-white/10 border-white text-white hover:bg-white hover:text-primary" size="lg" asChild>
+                    <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+                      Demander un devis
+                    </Link>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>

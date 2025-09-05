@@ -57,10 +57,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              {navigation.map((item) => (
+            {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
+                  onClick={() => window.scrollTo(0, 0)}
                   className={`text-sm font-medium transition-colors hover:text-primary ${
                     isActive(item.href) ? "text-primary" : "text-foreground"
                   }`}
@@ -82,6 +83,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     <DropdownMenuItem key={item.name} asChild>
                       <Link
                         to={item.href}
+                        onClick={() => window.scrollTo(0, 0)}
                         className={`w-full p-3 block text-sm font-medium transition-colors hover:text-primary ${
                           isActive(item.href) ? "text-primary" : "text-foreground"
                         }`}
@@ -109,6 +111,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     <DropdownMenuItem key={item.name} asChild>
                       <Link
                         to={item.href}
+                        onClick={() => window.scrollTo(0, 0)}
                         className={`w-full text-sm font-medium transition-colors hover:text-primary ${
                           isActive(item.href) ? "text-primary" : "text-foreground"
                         }`}
@@ -124,7 +127,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             {/* CTA Button */}
             <div className="hidden md:flex items-center space-x-4">
               <Button variant="hero" size="sm" asChild>
-                <Link to="/eligibility">Test gratuit</Link>
+                <Link to="/eligibility" onClick={() => window.scrollTo(0, 0)}>Test gratuit</Link>
               </Button>
             </div>
 
@@ -142,14 +145,17 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <div className="md:hidden py-4 border-t border-border">
               <nav className="flex flex-col space-y-4">
                 {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className={`text-sm font-medium transition-colors hover:text-primary ${
-                      isActive(item.href) ? "text-primary" : "text-foreground"
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className={`text-sm font-medium transition-colors hover:text-primary ${
+                        isActive(item.href) ? "text-primary" : "text-foreground"
+                      }`}
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        window.scrollTo(0, 0);
+                      }}
+                    >
                     {item.name}
                   </Link>
                 ))}
@@ -159,14 +165,17 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   <span className="text-sm font-medium text-muted-foreground">Services</span>
                   <div className="pl-4 space-y-2">
                     {servicesLinks.map((item) => (
-                      <Link
-                        key={item.name}
-                        to={item.href}
-                        className={`block text-sm font-medium transition-colors hover:text-primary ${
-                          isActive(item.href) ? "text-primary" : "text-foreground"
-                        }`}
-                        onClick={() => setIsMenuOpen(false)}
-                      >
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          className={`block text-sm font-medium transition-colors hover:text-primary ${
+                            isActive(item.href) ? "text-primary" : "text-foreground"
+                          }`}
+                          onClick={() => {
+                            setIsMenuOpen(false);
+                            window.scrollTo(0, 0);
+                          }}
+                        >
                         {item.name}
                       </Link>
                     ))}
@@ -178,14 +187,17 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   <span className="text-sm font-medium text-muted-foreground">Canada</span>
                   <div className="pl-4 space-y-2">
                     {canadaLinks.map((item) => (
-                      <Link
-                        key={item.name}
-                        to={item.href}
-                        className={`block text-sm font-medium transition-colors hover:text-primary ${
-                          isActive(item.href) ? "text-primary" : "text-foreground"
-                        }`}
-                        onClick={() => setIsMenuOpen(false)}
-                      >
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          className={`block text-sm font-medium transition-colors hover:text-primary ${
+                            isActive(item.href) ? "text-primary" : "text-foreground"
+                          }`}
+                          onClick={() => {
+                            setIsMenuOpen(false);
+                            window.scrollTo(0, 0);
+                          }}
+                        >
                         {item.name}
                       </Link>
                     ))}
@@ -193,7 +205,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 </div>
                 
                 <Button variant="hero" size="sm" asChild className="w-fit">
-                  <Link to="/eligibility">Test gratuit</Link>
+                  <Link to="/eligibility" onClick={() => {
+                    setIsMenuOpen(false);
+                    window.scrollTo(0, 0);
+                  }}>Test gratuit</Link>
                 </Button>
               </nav>
             </div>
@@ -229,6 +244,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   <li key={item.name}>
                     <Link
                       to={item.href}
+                      onClick={() => window.scrollTo(0, 0)}
                       className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                     >
                       {item.name}
@@ -243,32 +259,32 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <h4 className="font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-primary-foreground/80">
                 <li>
-                  <Link to="/ressources-humaines" className="hover:text-primary-foreground transition-colors">
+                  <Link to="/ressources-humaines" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-foreground transition-colors">
                     Ressources Humaines
                   </Link>
                 </li>
                 <li>
-                  <Link to="/immigration-permanente" className="hover:text-primary-foreground transition-colors">
+                  <Link to="/immigration-permanente" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-foreground transition-colors">
                     Immigration Permanente
                   </Link>
                 </li>
                 <li>
-                  <Link to="/regroupement-familial" className="hover:text-primary-foreground transition-colors">
+                  <Link to="/regroupement-familial" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-foreground transition-colors">
                     Regroupement Familial
                   </Link>
                 </li>
                 <li>
-                  <Link to="/etudes-canada" className="hover:text-primary-foreground transition-colors">
+                  <Link to="/etudes-canada" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-foreground transition-colors">
                     Études au Canada
                   </Link>
                 </li>
                 <li>
-                  <Link to="/formations" className="hover:text-primary-foreground transition-colors">
+                  <Link to="/formations" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-foreground transition-colors">
                     Formations
                   </Link>
                 </li>
                 <li>
-                  <Link to="/services" className="hover:text-primary-foreground transition-colors">
+                  <Link to="/services" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-foreground transition-colors">
                     Conseil & Orientation
                   </Link>
                 </li>
