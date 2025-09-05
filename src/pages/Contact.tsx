@@ -7,18 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { MapPin, Phone, Mail, Clock, MessageSquare, Send } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { useSEO } from "@/hooks/useSEO";
 
 const Contact = () => {
-  const { t } = useLanguage();
-  
-  // SEO optimization
-  useSEO({
-    title: t('contactPage.title'),
-    description: t('contactPage.subtitle')
-  });
-
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
@@ -91,10 +81,10 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {t('contactPage.title')}
+              Contactez-nous
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              {t('contactPage.subtitle')}
+              Notre équipe d'experts est à votre disposition pour vous accompagner dans vos projets.
             </p>
           </div>
         </div>
