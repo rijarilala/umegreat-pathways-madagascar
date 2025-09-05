@@ -5,38 +5,30 @@ import { Users, Globe, BookOpen, Award, ArrowRight, CheckCircle } from "lucide-r
 import heroImage from "@/assets/hero-image.jpg";
 import hrImage from "@/assets/hr-consulting.jpg";
 import canadaImage from "@/assets/canada-immigration.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useSEO } from "@/hooks/useSEO";
 
 const Home = () => {
-  const services = [
-    {
-      icon: Users,
-      title: "Ressources Humaines",
-      description: "Formations GRH, conseil en gestion RH, coaching management",
-      featured: true,
-    },
-    {
-      icon: Globe,
-      title: "Immigration Canada",
-      description: "Regroupement familial, installation durable avec emploi",
-      featured: true,
-    },
-  ];
+  const { t } = useLanguage();
+  
+  // SEO optimization
+  useSEO();
 
   const testimonials = [
     {
-      name: "Marie R.",
-      role: "DRH",
-      content: "Un accompagnement exceptionnel pour nos formations RH. L'équipe d'UMEGREAT PRO a su adapter les contenus à nos besoins spécifiques.",
+      name: t('testimonials.items.marie.name'),
+      role: t('testimonials.items.marie.role'),
+      content: t('testimonials.items.marie.content'),
     },
     {
-      name: "Jean-Claude M.",
-      role: "Immigrant au Canada",
-      content: "Grâce à UMEGREAT PRO, j'ai pu immigrer au Canada avec ma famille. Un processus bien encadré du début à la fin.",
+      name: t('testimonials.items.jean.name'),
+      role: t('testimonials.items.jean.role'),
+      content: t('testimonials.items.jean.content'),
     },
     {
-      name: "Sophie L.",
-      role: "Cadre commercial",
-      content: "Le coaching carrière m'a permis de clarifier mes objectifs et de décrocher le poste de mes rêves. Merci !",
+      name: t('testimonials.items.sophie.name'),
+      role: t('testimonials.items.sophie.role'),
+      content: t('testimonials.items.sophie.content'),
     },
   ];
 
@@ -49,20 +41,19 @@ const Home = () => {
       >
         <div className="container mx-auto px-4 text-center text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Ensemble vers la vie que vous méritez
+            {t('hero.title')}
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-white/90">
-            Cabinet de conseil spécialisé en Ressources Humaines et Immigration au Canada. 
-            Votre réussite professionnelle commence ici.
+            {t('hero.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="accent" size="lg" asChild>
               <Link to="/eligibility" onClick={() => window.scrollTo(0, 0)}>
-                Testez votre éligibilité <ArrowRight className="ml-2" size={20} />
+                {t('hero.ctaPrimary')} <ArrowRight className="ml-2" size={20} />
               </Link>
             </Button>
             <Button variant="outline" size="lg" className="bg-white/10 border-white text-white hover:bg-white hover:text-primary" asChild>
-              <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contactez-nous</Link>
+              <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>{t('hero.ctaSecondary')}</Link>
             </Button>
           </div>
         </div>
@@ -72,9 +63,9 @@ const Home = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Nos domaines d'expertise</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('services.title')}</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Trois piliers d'excellence pour votre développement professionnel et personnel
+              {t('services.subtitle')}
             </p>
           </div>
 
@@ -82,7 +73,7 @@ const Home = () => {
             {/* RH Card */}
             <Card className="relative overflow-hidden border-primary/20 hover:shadow-elegant transition-all duration-300">
               <div className="absolute top-0 right-0 bg-gradient-accent text-accent-foreground px-3 py-1 rounded-bl-lg">
-                <span className="text-sm font-semibold">Point Fort</span>
+                <span className="text-sm font-semibold">{t('common.pointFort')}</span>
               </div>
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-2/3 p-6">
@@ -91,33 +82,33 @@ const Home = () => {
                       <div className="bg-primary/10 p-3 rounded-lg">
                         <Users className="text-primary" size={24} />
                       </div>
-                      <CardTitle className="text-xl">Ressources Humaines</CardTitle>
+                      <CardTitle className="text-xl">{t('services.hr.title')}</CardTitle>
                     </div>
                     <CardDescription>
-                      Expertise complète en gestion des ressources humaines
+                      {t('services.hr.description')}
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="p-0">
                     <ul className="space-y-2 mb-4">
                       <li className="flex items-center space-x-2">
                         <CheckCircle size={16} className="text-accent" />
-                        <span className="text-sm">Conseil et audit RH</span>
+                        <span className="text-sm">{t('services.hr.features.audit')}</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <CheckCircle size={16} className="text-accent" />
-                        <span className="text-sm">Coaching management et leadership</span>
+                        <span className="text-sm">{t('services.hr.features.coaching')}</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <CheckCircle size={16} className="text-accent" />
-                        <span className="text-sm">Conseil en orientation professionnelle</span>
+                        <span className="text-sm">{t('services.hr.features.orientation')}</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <CheckCircle size={16} className="text-accent" />
-                        <span className="text-sm">Optimisation des processus RH</span>
+                        <span className="text-sm">{t('services.hr.features.optimization')}</span>
                       </li>
                     </ul>
                     <Button variant="default" asChild>
-                      <Link to="/ressources-humaines" onClick={() => window.scrollTo(0, 0)}>En savoir plus</Link>
+                      <Link to="/ressources-humaines" onClick={() => window.scrollTo(0, 0)}>{t('services.hr.cta')}</Link>
                     </Button>
                   </CardContent>
                 </div>
@@ -130,7 +121,7 @@ const Home = () => {
             {/* Immigration Card */}
             <Card className="relative overflow-hidden border-primary/20 hover:shadow-elegant transition-all duration-300">
               <div className="absolute top-0 right-0 bg-gradient-accent text-accent-foreground px-3 py-1 rounded-bl-lg">
-                <span className="text-sm font-semibold">Point Fort</span>
+                <span className="text-sm font-semibold">{t('common.pointFort')}</span>
               </div>
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-2/3 p-6">
@@ -139,29 +130,29 @@ const Home = () => {
                       <div className="bg-primary/10 p-3 rounded-lg">
                         <Globe className="text-primary" size={24} />
                       </div>
-                      <CardTitle className="text-xl">Immigration Canada</CardTitle>
+                      <CardTitle className="text-xl">{t('services.immigration.title')}</CardTitle>
                     </div>
                     <CardDescription>
-                      Accompagnement complet pour votre projet d'immigration
+                      {t('services.immigration.description')}
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="p-0">
                     <ul className="space-y-2 mb-4">
                       <li className="flex items-center space-x-2">
                         <CheckCircle size={16} className="text-accent" />
-                        <span className="text-sm">Regroupement familial</span>
+                        <span className="text-sm">{t('services.immigration.features.family')}</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <CheckCircle size={16} className="text-accent" />
-                        <span className="text-sm">Installation avec emploi</span>
+                        <span className="text-sm">{t('services.immigration.features.employment')}</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <CheckCircle size={16} className="text-accent" />
-                        <span className="text-sm">Test d'éligibilité gratuit</span>
+                        <span className="text-sm">{t('services.immigration.features.test')}</span>
                       </li>
                     </ul>
                     <Button variant="accent" asChild>
-                      <Link to="/eligibility" onClick={() => window.scrollTo(0, 0)}>Tester maintenant</Link>
+                      <Link to="/eligibility" onClick={() => window.scrollTo(0, 0)}>{t('services.immigration.cta')}</Link>
                     </Button>
                   </CardContent>
                 </div>
@@ -174,7 +165,7 @@ const Home = () => {
             {/* Formations Card */}
             <Card className="relative overflow-hidden border-primary/20 hover:shadow-elegant transition-all duration-300">
               <div className="absolute top-0 right-0 bg-gradient-accent text-accent-foreground px-3 py-1 rounded-bl-lg">
-                <span className="text-sm font-semibold">Point Fort</span>
+                <span className="text-sm font-semibold">{t('common.pointFort')}</span>
               </div>
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-2/3 p-6">
@@ -183,33 +174,33 @@ const Home = () => {
                       <div className="bg-primary/10 p-3 rounded-lg">
                         <BookOpen className="text-primary" size={24} />
                       </div>
-                      <CardTitle className="text-xl">Formations Professionnelles</CardTitle>
+                      <CardTitle className="text-xl">{t('services.training.title')}</CardTitle>
                     </div>
                     <CardDescription>
-                      Développement des compétences pour votre réussite professionnelle
+                      {t('services.training.description')}
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="p-0">
                     <ul className="space-y-2 mb-4">
                       <li className="flex items-center space-x-2">
                         <CheckCircle size={16} className="text-accent" />
-                        <span className="text-sm">CV et lettres de motivation impactants</span>
+                        <span className="text-sm">{t('services.training.features.cv')}</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <CheckCircle size={16} className="text-accent" />
-                        <span className="text-sm">Optimisation LinkedIn et recherche d'emploi</span>
+                        <span className="text-sm">{t('services.training.features.linkedin')}</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <CheckCircle size={16} className="text-accent" />
-                        <span className="text-sm">Transition vers la vie active</span>
+                        <span className="text-sm">{t('services.training.features.transition')}</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <CheckCircle size={16} className="text-accent" />
-                        <span className="text-sm">Gestion des ressources humaines</span>
+                        <span className="text-sm">{t('services.training.features.grh')}</span>
                       </li>
                     </ul>
                     <Button variant="default" asChild>
-                      <Link to="/formations" onClick={() => window.scrollTo(0, 0)}>Découvrir nos formations</Link>
+                      <Link to="/formations" onClick={() => window.scrollTo(0, 0)}>{t('services.training.cta')}</Link>
                     </Button>
                   </CardContent>
                 </div>
@@ -229,29 +220,28 @@ const Home = () => {
           {/* Accroche professionnelle */}
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold text-white mb-4">
-              Formations d'Excellence
+              {t('training.badge')}
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Investissez dans votre avenir professionnel</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('training.title')}</h2>
             <div className="max-w-4xl mx-auto space-y-4">
               <p className="text-xl text-white/95 font-medium">
-                Nos packs de formation sont conçus par des experts pour transformer votre potentiel en succès concret.
+                {t('training.subtitle')}
               </p>
               <p className="text-lg text-white/80">
-                Que vous soyez en recherche d'emploi, en reconversion ou souhaitiez évoluer en RH, 
-                nos programmes personnalisés vous donnent les clés pour atteindre vos objectifs professionnels.
+                {t('training.description')}
               </p>
               <div className="flex flex-wrap justify-center gap-6 mt-8 text-white/90">
                 <div className="flex items-center space-x-2">
                   <CheckCircle size={20} className="text-accent" />
-                  <span>Approche pratique et opérationnelle</span>
+                  <span>{t('training.features.practical')}</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle size={20} className="text-accent" />
-                  <span>Suivi personnalisé inclus</span>
+                  <span>{t('training.features.support')}</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle size={20} className="text-accent" />
-                  <span>Résultats garantis</span>
+                  <span>{t('training.features.results')}</span>
                 </div>
               </div>
             </div>
