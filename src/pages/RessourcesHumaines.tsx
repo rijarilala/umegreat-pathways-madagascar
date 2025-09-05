@@ -134,46 +134,6 @@ const RessourcesHumaines = () => {
         </div>
       </section>
 
-      {/* Services RH détaillés */}
-      <section className="py-20 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Nos Services RH</h2>
-            <p className="text-xl text-muted-foreground">
-              Des solutions complètes pour optimiser votre gestion des ressources humaines
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {hrServices.map((service, index) => (
-              <Card key={index} className="h-full hover:shadow-elegant transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-primary/10 p-4 rounded-lg flex-shrink-0">
-                      <service.icon className="text-primary" size={32} />
-                    </div>
-                    <div>
-                      <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
-                      <CardDescription className="text-base">{service.description}</CardDescription>
-                    </div>
-                  </div>
-                </CardHeader>
-
-                <CardContent>
-                  <ul className="space-y-3">
-                    {service.details.map((detail, idx) => (
-                      <li key={idx} className="flex items-start space-x-3">
-                        <CheckCircle size={16} className="text-accent mt-1 flex-shrink-0" />
-                        <span className="text-sm">{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Services Spécialisés Section */}
       <section className="py-20 bg-muted/50">
