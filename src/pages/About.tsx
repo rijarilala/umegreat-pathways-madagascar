@@ -2,44 +2,54 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Target, Eye, Heart, Users, Globe, Award, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useSEO } from "@/hooks/useSEO";
 
 const About = () => {
+  const { t } = useLanguage();
+  
+  // SEO optimization
+  useSEO({
+    title: t('about.title'),
+    description: t('about.subtitle')
+  });
+
   const values = [
     {
       icon: Target,
-      title: "Mission",
-      description: "Accompagner les individus et organisations dans leur développement professionnel et leurs projets de vie, avec un focus sur les ressources humaines et l'immigration au Canada."
+      title: t('about.values.mission.title'),
+      description: t('about.values.mission.description')
     },
     {
       icon: Eye,
-      title: "Vision",
-      description: "Être le cabinet de référence à Madagascar pour l'accompagnement RH et l'immigration, reconnu pour son expertise et la qualité de ses services."
+      title: t('about.values.vision.title'),
+      description: t('about.values.vision.description')
     },
     {
       icon: Heart,
-      title: "Valeurs",
-      description: "Excellence, proximité, intégrité et engagement. Nous croyons en un accompagnement personnalisé et professionnel pour chaque client."
+      title: t('about.values.values.title'),
+      description: t('about.values.values.description')
     }
   ];
 
   const expertise = [
     {
       icon: Users,
-      title: "Expertise RH",
-      description: "Plus de 10 ans d'expérience en gestion des ressources humaines, formation et développement organisationnel.",
-      stats: "50+ entreprises accompagnées"
+      title: t('about.expertise.hr.title'),
+      description: t('about.expertise.hr.description'),
+      stats: t('about.expertise.hr.stats')
     },
     {
       icon: Globe,
-      title: "Immigration Canada", 
-      description: "Spécialisation dans les processus d'immigration canadienne avec un taux de réussite élevé.",
-      stats: "200+ dossiers traités"
+      title: t('about.expertise.immigration.title'), 
+      description: t('about.expertise.immigration.description'),
+      stats: t('about.expertise.immigration.stats')
     },
     {
       icon: Award,
-      title: "Formations certifiantes",
-      description: "Programmes de formation reconnus et adaptés aux besoins du marché local et international.",
-      stats: "1000+ personnes formées"
+      title: t('about.expertise.training.title'),
+      description: t('about.expertise.training.description'),
+      stats: t('about.expertise.training.stats')
     }
   ];
 
@@ -50,10 +60,10 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              À propos d'UMEGREAT PRO
+              {t('about.title')}
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Votre partenaire de confiance pour le développement professionnel et la réalisation de vos projets d'immigration au Canada.
+              {t('about.subtitle')}
             </p>
           </div>
         </div>
@@ -63,9 +73,9 @@ const About = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Qui sommes-nous ?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('about.whoWeAre')}</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              UMEGREAT PRO est un cabinet de conseil basé à Moramanga, Madagascar, spécialisé dans l'accompagnement des ressources humaines et l'immigration au Canada.
+              {t('about.description')}
             </p>
           </div>
 
@@ -91,9 +101,9 @@ const About = () => {
       <section className="py-20 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Notre expertise</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('about.expertise.title')}</h2>
             <p className="text-xl text-muted-foreground">
-              Des domaines de compétence reconnus avec des résultats concrets
+              {t('about.expertise.subtitle')}
             </p>
           </div>
 
@@ -125,33 +135,29 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Notre engagement</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('about.commitment.title')}</h2>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-semibold text-primary">Accompagnement sur mesure</h3>
+                  <h3 className="text-2xl font-semibold text-primary">{t('about.commitment.personalized.title')}</h3>
                   <p className="text-muted-foreground">
-                    Chaque client est unique. Nous adaptons nos services à vos besoins spécifiques, 
-                    que vous soyez un particulier en quête de nouvelles opportunités ou une entreprise 
-                    souhaitant développer ses ressources humaines.
+                    {t('about.commitment.personalized.description')}
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-semibold text-primary">Proximité et professionnalisme</h3>
+                  <h3 className="text-2xl font-semibold text-primary">{t('about.commitment.proximity.title')}</h3>
                   <p className="text-muted-foreground">
-                    Basés à Moramanga, nous comprenons les enjeux locaux tout en gardant une vision 
-                    internationale. Notre approche combine proximité humaine et expertise professionnelle.
+                    {t('about.commitment.proximity.description')}
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-semibold text-primary">Résultats concrets</h3>
+                  <h3 className="text-2xl font-semibold text-primary">{t('about.commitment.results.title')}</h3>
                   <p className="text-muted-foreground">
-                    Notre succès se mesure au vôtre. Nous nous engageons à vous fournir des solutions 
-                    pratiques et efficaces pour atteindre vos objectifs professionnels et personnels.
+                    {t('about.commitment.results.description')}
                   </p>
                 </div>
               </div>
@@ -159,27 +165,27 @@ const About = () => {
               <div className="space-y-6">
                 <Card className="bg-gradient-accent text-accent-foreground border-none">
                   <CardContent className="p-8 text-center">
-                    <h4 className="text-2xl font-bold mb-4">Pourquoi nous choisir ?</h4>
+                    <h4 className="text-2xl font-bold mb-4">{t('about.whyChooseUs.title')}</h4>
                     <ul className="space-y-3 text-left">
                       <li className="flex items-start space-x-2">
                         <span className="text-accent-foreground/80">•</span>
-                        <span>Expertise reconnue en RH et immigration</span>
+                        <span>{t('about.whyChooseUs.expertise')}</span>
                       </li>
                       <li className="flex items-start space-x-2">
                         <span className="text-accent-foreground/80">•</span>
-                        <span>Accompagnement personnalisé</span>
+                        <span>{t('about.whyChooseUs.personalized')}</span>
                       </li>
                       <li className="flex items-start space-x-2">
                         <span className="text-accent-foreground/80">•</span>
-                        <span>Taux de réussite élevé</span>
+                        <span>{t('about.whyChooseUs.success')}</span>
                       </li>
                       <li className="flex items-start space-x-2">
                         <span className="text-accent-foreground/80">•</span>
-                        <span>Transparence et intégrité</span>
+                        <span>{t('about.whyChooseUs.transparency')}</span>
                       </li>
                       <li className="flex items-start space-x-2">
                         <span className="text-accent-foreground/80">•</span>
-                        <span>Suivi à long terme</span>
+                        <span>{t('about.whyChooseUs.followUp')}</span>
                       </li>
                     </ul>
                   </CardContent>
@@ -194,19 +200,19 @@ const About = () => {
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Prêt à faire le premier pas ?
+            {t('about.ctaTitle')}
           </h2>
           <p className="text-xl mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
-            Découvrez comment nous pouvons vous accompagner dans la réalisation de vos projets professionnels.
+            {t('about.ctaSubtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="accent" size="lg" asChild>
               <Link to="/services">
-                Découvrir nos services <ArrowRight className="ml-2" size={20} />
+                {t('about.ctaPrimary')} <ArrowRight className="ml-2" size={20} />
               </Link>
             </Button>
             <Button variant="outline" size="lg" className="bg-white/10 border-white text-white hover:bg-white hover:text-primary" asChild>
-              <Link to="/contact">Nous contacter</Link>
+              <Link to="/contact">{t('about.ctaSecondary')}</Link>
             </Button>
           </div>
         </div>

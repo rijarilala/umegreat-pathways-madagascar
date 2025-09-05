@@ -16,8 +16,17 @@ import {
   Briefcase,
   FileText
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useSEO } from "@/hooks/useSEO";
 
 const Services = () => {
+  const { t } = useLanguage();
+  
+  // SEO optimization
+  useSEO({
+    title: t('servicesPage.pageTitle'),
+    description: t('servicesPage.pageSubtitle')
+  });
   const mainServices = [
     {
       icon: Users,
@@ -113,10 +122,10 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Nos Services
+              {t('servicesPage.pageTitle')}
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Des solutions sur mesure pour votre développement professionnel et vos projets d'immigration.
+              {t('servicesPage.pageSubtitle')}
             </p>
           </div>
         </div>
