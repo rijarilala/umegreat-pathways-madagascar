@@ -11,6 +11,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     { name: "Accueil", href: "/" },
     { name: "À propos", href: "/about" },
     { name: "Services", href: "/services" },
+    { name: "Formations", href: "/formations" },
     { name: "Test d'éligibilité", href: "/eligibility" },
     { name: "FAQ", href: "/faq" },
     { name: "Contact", href: "/contact" },
@@ -132,10 +133,26 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <div>
               <h4 className="font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-primary-foreground/80">
-                <li>Ressources Humaines</li>
-                <li>Immigration Canada</li>
-                <li>Conseil & Orientation</li>
-                <li>Formations</li>
+                <li>
+                  <Link to="/services" className="hover:text-primary-foreground transition-colors">
+                    Ressources Humaines
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services" className="hover:text-primary-foreground transition-colors">
+                    Immigration Canada
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/formations" className="hover:text-primary-foreground transition-colors">
+                    Formations
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services" className="hover:text-primary-foreground transition-colors">
+                    Conseil & Orientation
+                  </Link>
+                </li>
               </ul>
             </div>
 

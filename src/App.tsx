@@ -11,6 +11,13 @@ import Eligibility from "./pages/Eligibility";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import FormationsIndex from "./pages/formations/index";
+import CVImpactant from "./pages/formations/CVImpactant";
+import LettreMotivation from "./pages/formations/LettreMotivation";
+import RechercheEmploi from "./pages/formations/RechercheEmploi";
+import TransitionVieActive from "./pages/formations/TransitionVieActive";
+import LinkedIn from "./pages/formations/LinkedIn";
+import GRH from "./pages/formations/GRH";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +35,13 @@ const App = () => (
             <Route path="/eligibility" element={<Eligibility />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/formations" element={<FormationsIndex />} />
+            <Route path="/formations/cv-impactant" element={<CVImpactant />} />
+            <Route path="/formations/lettre-motivation" element={<LettreMotivation />} />
+            <Route path="/formations/recherche-emploi" element={<RechercheEmploi />} />
+            <Route path="/formations/transition-vie-active" element={<TransitionVieActive />} />
+            <Route path="/formations/linkedin" element={<LinkedIn />} />
+            <Route path="/formations/grh" element={<GRH />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
