@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import lettreMotivationImage from "@/assets/formations/lettre-motivation.jpg";
 import { 
   MessageSquare, 
   Target, 
@@ -55,7 +56,15 @@ const LettreMotivation = () => {
   return (
     <div className="space-y-0">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-hero text-primary-foreground">
+      <section 
+        className="py-20 bg-gradient-hero text-primary-foreground relative overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(rgba(var(--primary-rgb), 0.8), rgba(var(--primary-rgb), 0.8)), url(${lettreMotivationImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center mb-6">
