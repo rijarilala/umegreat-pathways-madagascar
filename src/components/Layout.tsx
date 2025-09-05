@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
@@ -12,17 +12,7 @@ import { SearchBar } from "@/components/SearchBar";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navigation = [
     { name: "Accueil", href: "/" },
@@ -52,28 +42,19 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className={`fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50 transition-all duration-300 ${
-        isScrolled ? 'py-2' : 'py-4'
-      }`}>
+      <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
         <div className="container mx-auto px-4">
-          <div className={`flex items-center justify-between transition-all duration-300 ${
-            isScrolled ? 'h-12' : 'h-20'
-          }`}>
+          <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3 transition-all duration-300">
+            <Link to="/" className="flex items-center space-x-3">
               <img 
-                src="/umegreat-pro-logo.png" 
+                src="/lovable-uploads/e6db913e-20f5-43fb-8d43-b731c331b66d.png" 
                 alt="UMEGREAT PRO" 
-                className={`transition-all duration-300 ${
-                  isScrolled ? 'h-10 w-10' : 'h-16 w-16'
-                }`}
+                className="h-12 w-12 object-contain"
               />
-              <div className="transition-all duration-300">
-                <p className={`text-muted-foreground transition-all duration-300 ${
-                  isScrolled ? 'text-xs' : 'text-sm'
-                }`}>
-                  Cabinet conseil
-                </p>
+              <div>
+                <h1 className="font-bold text-lg text-primary">UMEGREAT PRO</h1>
+                <p className="text-xs text-muted-foreground">Cabinet conseil</p>
               </div>
             </Link>
 
@@ -245,7 +226,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </header>
 
       {/* Main Content */}
-      <main className="pt-24">{children}</main>
+      <main className="pt-16">{children}</main>
 
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground">
@@ -253,10 +234,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <div className="bg-accent p-2 rounded-lg">
-                  <span className="text-accent-foreground font-bold">UP</span>
-                </div>
+              <div className="flex items-center space-x-3">
+                <img 
+                  src="/lovable-uploads/e6db913e-20f5-43fb-8d43-b731c331b66d.png" 
+                  alt="UMEGREAT PRO" 
+                  className="h-10 w-10 object-contain"
+                />
                 <h3 className="font-bold text-lg">UMEGREAT PRO</h3>
               </div>
               <p className="text-primary-foreground/80 text-sm">
