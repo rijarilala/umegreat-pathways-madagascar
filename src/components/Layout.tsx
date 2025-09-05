@@ -16,11 +16,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const navigation = [
     { name: "Accueil", href: "/" },
     { name: "À propos", href: "/about" },
-    { name: "Services", href: "/services" },
     { name: "Formations", href: "/formations" },
     { name: "Test d'éligibilité", href: "/eligibility" },
     { name: "FAQ", href: "/faq" },
     { name: "Contact", href: "/contact" },
+  ];
+
+  const servicesLinks = [
+    { name: "Tous nos services", href: "/services", description: "Vue d'ensemble de tous nos services et domaines d'expertise" },
+    { name: "Ressources Humaines", href: "/ressources-humaines", description: "Conseil, coaching et audit RH pour optimiser votre capital humain" },
   ];
 
   const canadaLinks = [
@@ -30,6 +34,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   ];
 
   const isCanadaActive = canadaLinks.some(link => location.pathname === link.href);
+  const isServicesActive = servicesLinks.some(link => location.pathname === link.href);
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -64,6 +69,33 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 </Link>
               ))}
               
+              {/* Services Dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger className={`flex items-center space-x-1 text-sm font-medium transition-colors hover:text-primary ${
+                  isServicesActive ? "text-primary" : "text-foreground"
+                }`}>
+                  <span>Services</span>
+                  <ChevronDown className="h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-background border border-border shadow-elegant min-w-[300px]">
+                  {servicesLinks.map((item) => (
+                    <DropdownMenuItem key={item.name} asChild>
+                      <Link
+                        to={item.href}
+                        className={`w-full p-3 block text-sm font-medium transition-colors hover:text-primary ${
+                          isActive(item.href) ? "text-primary" : "text-foreground"
+                        }`}
+                      >
+                        <div>
+                          <div className="font-medium">{item.name}</div>
+                          <div className="text-xs text-muted-foreground mt-1">{item.description}</div>
+                        </div>
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+
               {/* Canada Dropdown */}
               <DropdownMenu>
                 <DropdownMenuTrigger className={`flex items-center space-x-1 text-sm font-medium transition-colors hover:text-primary ${
@@ -122,6 +154,25 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   </Link>
                 ))}
                 
+                {/* Services submenu for mobile */}
+                <div className="space-y-2">
+                  <span className="text-sm font-medium text-muted-foreground">Services</span>
+                  <div className="pl-4 space-y-2">
+                    {servicesLinks.map((item) => (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        className={`block text-sm font-medium transition-colors hover:text-primary ${
+                          isActive(item.href) ? "text-primary" : "text-foreground"
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
                 {/* Canada submenu for mobile */}
                 <div className="space-y-2">
                   <span className="text-sm font-medium text-muted-foreground">Canada</span>
@@ -192,7 +243,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <h4 className="font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-primary-foreground/80">
                 <li>
-                  <Link to="/services" className="hover:text-primary-foreground transition-colors">
+                  <Link to="/ressources-humaines" className="hover:text-primary-foreground transition-colors">
                     Ressources Humaines
                   </Link>
                 </li>
