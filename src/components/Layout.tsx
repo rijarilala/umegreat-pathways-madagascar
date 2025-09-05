@@ -44,23 +44,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       {/* Header */}
       <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3">
-              <img 
-                src="/lovable-uploads/e6db913e-20f5-43fb-8d43-b731c331b66d.png" 
-                alt="UMEGREAT PRO" 
-                className="h-12 w-12 object-contain"
-              />
-              <div>
-                <h1 className="font-bold text-lg text-primary">UMEGREAT PRO</h1>
-                <p className="text-xs text-muted-foreground">Cabinet conseil</p>
-              </div>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
+          <div className="flex items-center justify-between h-16 relative">
+            {/* Left Navigation */}
+            <nav className="hidden md:flex items-center space-x-6">
+              {navigation.slice(0, 2).map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
@@ -100,6 +87,37 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
+            </nav>
+
+            {/* Centered Logo */}
+            <div className="absolute left-1/2 transform -translate-x-1/2">
+              <Link to="/" className="flex items-center space-x-3">
+                <img 
+                  src="/lovable-uploads/e6db913e-20f5-43fb-8d43-b731c331b66d.png" 
+                  alt="UMEGREAT PRO" 
+                  className="h-12 w-12 object-contain"
+                />
+                <div>
+                  <h1 className="font-bold text-lg text-primary">UMEGREAT PRO</h1>
+                  <p className="text-xs text-muted-foreground">Cabinet conseil</p>
+                </div>
+              </Link>
+            </div>
+
+            {/* Right Navigation */}
+            <nav className="hidden md:flex items-center space-x-6">
+              {navigation.slice(2).map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  onClick={() => window.scrollTo(0, 0)}
+                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                    isActive(item.href) ? "text-primary" : "text-foreground"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
 
               {/* Canada Dropdown */}
               <DropdownMenu>
@@ -125,15 +143,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
-            </nav>
 
-            {/* CTA Button and Search */}
-            <div className="hidden md:flex items-center space-x-4">
               <SearchBar />
               <Button variant="hero" size="sm" asChild>
                 <Link to="/eligibility" onClick={() => window.scrollTo(0, 0)}>Évaluer votre éligibilité</Link>
               </Button>
-            </div>
+            </nav>
 
             {/* Mobile menu button */}
             <button
@@ -147,6 +162,21 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           {/* Mobile Navigation */}
           {isMenuOpen && (
             <div className="md:hidden py-4 border-t border-border">
+              {/* Centered Logo on Mobile */}
+              <div className="flex justify-center mb-6">
+                <Link to="/" className="flex items-center space-x-3">
+                  <img 
+                    src="/lovable-uploads/e6db913e-20f5-43fb-8d43-b731c331b66d.png" 
+                    alt="UMEGREAT PRO" 
+                    className="h-10 w-10 object-contain"
+                  />
+                  <div>
+                    <h1 className="font-bold text-base text-primary">UMEGREAT PRO</h1>
+                    <p className="text-xs text-muted-foreground">Cabinet conseil</p>
+                  </div>
+                </Link>
+              </div>
+              
               {/* Mobile Search */}
               <div className="mb-6">
                 <SearchBar variant="inline" placeholder="Rechercher..." />
