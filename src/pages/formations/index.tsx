@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { FileText, MessageSquare, Search, Compass, Linkedin, Briefcase, Clock, Users, ArrowRight, BookOpen, Star } from "lucide-react";
+import { FileText, MessageSquare, Search, Compass, Linkedin, Briefcase, Clock, Users, ArrowRight, BookOpen, Star, Package, CheckCircle, Target, Zap, Award } from "lucide-react";
 const FormationsIndex = () => {
   const formations = [{
     id: "cv-impactant",
@@ -157,6 +157,174 @@ const FormationsIndex = () => {
                   </Button>
                 </CardContent>
               </Card>)}
+          </div>
+        </div>
+      </section>
+
+      {/* Nos Packs de Formation */}
+      <section className="py-20 bg-gradient-to-br from-accent/5 to-primary/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Nos Packs de Formation</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Des programmes complets et optimisés pour maximiser votre réussite professionnelle
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Pack Réussite */}
+            <Card className="relative overflow-hidden hover:shadow-elegant transition-all duration-300 group border-2">
+              <div className="absolute top-0 right-0 bg-accent text-white px-4 py-2 rounded-bl-lg">
+                <span className="text-sm font-semibold">POPULAIRE</span>
+              </div>
+              
+              <CardHeader className="pb-4">
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="bg-gradient-to-br from-accent to-accent/80 p-4 rounded-xl">
+                    <Award size={32} className="text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-2xl text-accent mb-2">Pack Réussite</CardTitle>
+                    <Badge variant="secondary" className="text-xs">CV + Lettre + Entretien</Badge>
+                  </div>
+                </div>
+              </CardHeader>
+
+              <CardContent className="space-y-6">
+                <div>
+                  <h4 className="font-semibold text-lg mb-3 flex items-center">
+                    <Package size={20} className="mr-2 text-accent" />
+                    Contenu détaillé
+                  </h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle size={16} className="text-accent mt-0.5 flex-shrink-0" />
+                      <span>Formation CV Impactant (2 jours)</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle size={16} className="text-accent mt-0.5 flex-shrink-0" />
+                      <span>Formation Lettre de Motivation Convaincante (1,5 jour)</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle size={16} className="text-accent mt-0.5 flex-shrink-0" />
+                      <span>Préparation aux entretiens + simulation (1 jour)</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle size={16} className="text-accent mt-0.5 flex-shrink-0" />
+                      <span>Suivi personnalisé pendant 3 mois</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-lg mb-3 flex items-center">
+                    <Target size={20} className="mr-2 text-accent" />
+                    Objectif principal
+                  </h4>
+                  <p className="text-muted-foreground text-sm">
+                    Maîtriser l'ensemble des outils de candidature pour maximiser vos chances de décrocher l'emploi désiré
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-lg mb-3 flex items-center">
+                    <Zap size={20} className="mr-2 text-accent" />
+                    Avantages concrets
+                  </h4>
+                  <ul className="space-y-1 text-sm text-muted-foreground">
+                    <li>• +70% de réponses positives aux candidatures</li>
+                    <li>• Confiance renforcée en entretien</li>
+                    <li>• Documents professionnels prêts à l'emploi</li>
+                    <li>• Économie de 40% vs formations séparées</li>
+                  </ul>
+                </div>
+
+                <div className="pt-4">
+                  <Button className="w-full bg-accent hover:bg-accent/90 text-white" size="lg" asChild>
+                    <Link to="/contact">
+                      En savoir plus <ArrowRight className="ml-2" size={20} />
+                    </Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Pack Formation RH */}
+            <Card className="relative overflow-hidden hover:shadow-elegant transition-all duration-300 group border-2">
+              <div className="absolute top-0 right-0 bg-primary text-white px-4 py-2 rounded-bl-lg">
+                <span className="text-sm font-semibold">EXPERT</span>
+              </div>
+              
+              <CardHeader className="pb-4">
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="bg-gradient-to-br from-primary to-primary/80 p-4 rounded-xl">
+                    <Briefcase size={32} className="text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-2xl text-primary mb-2">Pack Formation RH</CardTitle>
+                    <Badge variant="secondary" className="text-xs">Formation + Outils RH</Badge>
+                  </div>
+                </div>
+              </CardHeader>
+
+              <CardContent className="space-y-6">
+                <div>
+                  <h4 className="font-semibold text-lg mb-3 flex items-center">
+                    <Package size={20} className="mr-2 text-primary" />
+                    Contenu détaillé
+                  </h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle size={16} className="text-primary mt-0.5 flex-shrink-0" />
+                      <span>Formation GRH complète (5 jours)</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle size={16} className="text-primary mt-0.5 flex-shrink-0" />
+                      <span>Kit d'outils RH digitaux</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle size={16} className="text-primary mt-0.5 flex-shrink-0" />
+                      <span>Modèles de documents RH</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle size={16} className="text-primary mt-0.5 flex-shrink-0" />
+                      <span>Accompagnement mise en pratique (2 mois)</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-lg mb-3 flex items-center">
+                    <Target size={20} className="mr-2 text-primary" />
+                    Objectif principal
+                  </h4>
+                  <p className="text-muted-foreground text-sm">
+                    Acquérir une expertise complète en GRH et disposer d'outils pratiques pour optimiser la gestion des équipes
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-lg mb-3 flex items-center">
+                    <Zap size={20} className="mr-2 text-primary" />
+                    Avantages concrets
+                  </h4>
+                  <ul className="space-y-1 text-sm text-muted-foreground">
+                    <li>• Compétences RH certifiées</li>
+                    <li>• Outils prêts à utiliser en entreprise</li>
+                    <li>• Réseau professionnel RH</li>
+                    <li>• Support technique inclus</li>
+                  </ul>
+                </div>
+
+                <div className="pt-4">
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-white" size="lg" asChild>
+                    <Link to="/contact">
+                      S'inscrire <ArrowRight className="ml-2" size={20} />
+                    </Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
