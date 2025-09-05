@@ -22,6 +22,8 @@ import TransitionVieActive from "./pages/formations/TransitionVieActive";
 import LinkedIn from "./pages/formations/LinkedIn";
 import GRH from "./pages/formations/GRH";
 import RessourcesHumaines from "./pages/RessourcesHumaines";
+import ConseilOrientation from "./pages/ConseilOrientation";
+import CoachingManagement from "./pages/CoachingManagement";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +52,8 @@ const App = () => (
             <Route path="/formations/linkedin" element={<LinkedIn />} />
             <Route path="/formations/grh" element={<GRH />} />
             <Route path="/ressources-humaines" element={<RessourcesHumaines />} />
+            <Route path="/conseil-orientation" element={<ConseilOrientation />} />
+            <Route path="/coaching-management" element={<CoachingManagement />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
