@@ -16,7 +16,8 @@ const Eligibility = () => {
     age: "",
     education: "",
     experience: "",
-    language: "",
+    frenchLevel: "",
+    englishLevel: "",
     maritalStatus: "",
     children: "",
     project: ""
@@ -46,10 +47,15 @@ const Eligibility = () => {
     else if (formData.experience === "1-3") score += 10;
     else if (formData.experience === "less-1") score += 5;
 
-    // Calcul basé sur la langue
-    if (formData.language === "advanced") score += 20;
-    else if (formData.language === "intermediate") score += 15;
-    else if (formData.language === "basic") score += 5;
+    // Calcul basé sur le français
+    if (formData.frenchLevel === "advanced") score += 20;
+    else if (formData.frenchLevel === "intermediate") score += 15;
+    else if (formData.frenchLevel === "basic") score += 5;
+
+    // Calcul basé sur l'anglais
+    if (formData.englishLevel === "advanced") score += 10;
+    else if (formData.englishLevel === "intermediate") score += 8;
+    else if (formData.englishLevel === "basic") score += 3;
 
     // Bonus pour situation familiale
     if (formData.maritalStatus === "married") score += 5;
@@ -291,18 +297,35 @@ const Eligibility = () => {
                   </Select>
                 </div>
 
-                <div className="space-y-2">
-                  <Label>Connaissance du français/anglais *</Label>
-                  <Select value={formData.language} onValueChange={(value) => setFormData({...formData, language: value})}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Évaluez votre niveau linguistique" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="basic">Basique (communication simple)</SelectItem>
-                      <SelectItem value="intermediate">Intermédiaire (conversations courantes)</SelectItem>
-                      <SelectItem value="advanced">Avancé/Courant (maîtrise professionnelle)</SelectItem>
-                    </SelectContent>
-                  </Select>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label>Niveau de français *</Label>
+                    <Select value={formData.frenchLevel} onValueChange={(value) => setFormData({...formData, frenchLevel: value})}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Évaluez votre français" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="none">Aucune connaissance</SelectItem>
+                        <SelectItem value="basic">Basique (communication simple)</SelectItem>
+                        <SelectItem value="intermediate">Intermédiaire (conversations courantes)</SelectItem>
+                        <SelectItem value="advanced">Avancé/Courant (maîtrise professionnelle)</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="space-y-2">
+                    <Label>Niveau d'anglais *</Label>
+                    <Select value={formData.englishLevel} onValueChange={(value) => setFormData({...formData, englishLevel: value})}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Évaluez votre anglais" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="none">Aucune connaissance</SelectItem>
+                        <SelectItem value="basic">Basique (communication simple)</SelectItem>
+                        <SelectItem value="intermediate">Intermédiaire (conversations courantes)</SelectItem>
+                        <SelectItem value="advanced">Avancé/Courant (maîtrise professionnelle)</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
                 </div>
 
                 <div className="space-y-3">
@@ -363,7 +386,7 @@ const Eligibility = () => {
                   className="w-full" 
                   variant="hero" 
                   size="lg"
-                  disabled={!formData.firstName || !formData.lastName || !formData.age || !formData.education || !formData.experience || !formData.language || !formData.maritalStatus || !formData.project}
+                  disabled={!formData.firstName || !formData.lastName || !formData.age || !formData.education || !formData.experience || !formData.frenchLevel || !formData.englishLevel || !formData.maritalStatus || !formData.project}
                 >
                   Obtenir mon évaluation <ArrowRight className="ml-2" size={20} />
                 </Button>

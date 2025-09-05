@@ -348,6 +348,131 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Section Démarche vers le Canada */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Démarche vers le Canada</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Trois étapes clés pour concrétiser votre projet d'immigration, regroupement familial ou études au Canada
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Étape 1 */}
+              <Card className="relative border-primary/20 hover:shadow-elegant transition-all duration-300">
+                <div className="absolute -top-4 left-6 bg-primary text-primary-foreground w-8 h-8 rounded-full flex items-center justify-center font-bold">
+                  1
+                </div>
+                <CardHeader className="pt-8">
+                  <div className="bg-primary/10 p-4 rounded-lg w-fit mx-auto mb-4">
+                    <Users className="text-primary" size={32} />
+                  </div>
+                  <CardTitle className="text-xl text-center">Séance d'information</CardTitle>
+                  <CardDescription className="text-center">
+                    Présentation des grandes lignes et critères de base
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <ul className="space-y-2 mb-6 text-sm text-muted-foreground">
+                    <li>• Informations générales sur le Canada</li>
+                    <li>• Évaluation rapide de vos besoins</li>
+                    <li>• Présentation des grandes étapes</li>
+                    <li>• Clarification de votre projet</li>
+                  </ul>
+                  <Button variant="outline" className="w-full" asChild>
+                    <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+                      Réservez votre séance
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Étape 2 */}
+              <Card className="relative border-accent/20 hover:shadow-elegant transition-all duration-300">
+                <div className="absolute -top-4 left-6 bg-accent text-accent-foreground w-8 h-8 rounded-full flex items-center justify-center font-bold">
+                  2
+                </div>
+                <CardHeader className="pt-8">
+                  <div className="bg-accent/10 p-4 rounded-lg w-fit mx-auto mb-4">
+                    <BookOpen className="text-accent" size={32} />
+                  </div>
+                  <CardTitle className="text-xl text-center">Élaboration du plan</CardTitle>
+                  <CardDescription className="text-center">
+                    Stratégie personnalisée (Business Plan)
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <ul className="space-y-2 mb-6 text-sm text-muted-foreground">
+                    <li>• Analyse de votre situation actuelle</li>
+                    <li>• Définition des objectifs précis</li>
+                    <li>• Plan d'action structuré</li>
+                    <li>• Timeline personnalisée</li>
+                  </ul>
+                  <Button variant="accent" className="w-full" asChild>
+                    <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+                      Élaborez votre plan
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Étape 3 */}
+              <Card className="relative border-secondary/20 hover:shadow-elegant transition-all duration-300">
+                <div className="absolute -top-4 left-6 bg-secondary text-secondary-foreground w-8 h-8 rounded-full flex items-center justify-center font-bold">
+                  3
+                </div>
+                <CardHeader className="pt-8">
+                  <div className="bg-secondary/10 p-4 rounded-lg w-fit mx-auto mb-4">
+                    <ArrowRight className="text-secondary-foreground" size={32} />
+                  </div>
+                  <CardTitle className="text-xl text-center">Action / Mise en œuvre</CardTitle>
+                  <CardDescription className="text-center">
+                    Passage à l'action concrète
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <ul className="space-y-2 mb-6 text-sm text-muted-foreground">
+                    <li>• Assistance démarches administratives</li>
+                    <li>• Suivi personnalisé continu</li>
+                    <li>• Conseils pratiques d'installation</li>
+                    <li>• Support jusqu'à l'intégration</li>
+                  </ul>
+                  <Button variant="default" className="w-full" asChild>
+                    <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+                      Passez à l'action
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Services applicables */}
+            <div className="mt-12 text-center">
+              <p className="text-muted-foreground mb-6">Cette démarche s'applique à :</p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button variant="outline" size="sm" asChild>
+                  <Link to="/immigration-permanente" onClick={() => window.scrollTo(0, 0)}>
+                    Immigration Permanente
+                  </Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link to="/regroupement-familial" onClick={() => window.scrollTo(0, 0)}>
+                    Regroupement Familial
+                  </Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link to="/etudes-canada" onClick={() => window.scrollTo(0, 0)}>
+                    Études au Canada
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-hero text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
