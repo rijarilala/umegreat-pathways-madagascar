@@ -218,45 +218,45 @@ const Home = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Pack Réussite */}
-            <Card className="bg-white/10 border-white/20 backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
+            <Card className="bg-white/95 border-white/20 backdrop-blur-sm hover:bg-white transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
-                  <div className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
                     Pack Populaire
                   </div>
                   <Award className="text-accent" size={24} />
                 </div>
-                <CardTitle className="text-2xl text-white">Pack Réussite</CardTitle>
-                <CardDescription className="text-white/80">
+                <CardTitle className="text-2xl text-primary">Pack Réussite</CardTitle>
+                <CardDescription className="text-muted-foreground">
                   L'essentiel pour décrocher votre emploi idéal
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center space-x-2">
-                    <CheckCircle size={16} className="text-accent" />
-                    <span className="text-white/90">Formation CV Impactant</span>
+                    <CheckCircle size={16} className="text-accent flex-shrink-0" />
+                    <span className="text-foreground">Formation CV Impactant</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <CheckCircle size={16} className="text-accent" />
-                    <span className="text-white/90">Lettre de motivation efficace</span>
+                    <CheckCircle size={16} className="text-accent flex-shrink-0" />
+                    <span className="text-foreground">Lettre de motivation efficace</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <CheckCircle size={16} className="text-accent" />
-                    <span className="text-white/90">Préparation entretien d'embauche</span>
+                    <CheckCircle size={16} className="text-accent flex-shrink-0" />
+                    <span className="text-foreground">Préparation entretien d'embauche</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <CheckCircle size={16} className="text-accent" />
-                    <span className="text-white/90">Suivi personnalisé 3 mois</span>
+                    <CheckCircle size={16} className="text-accent flex-shrink-0" />
+                    <span className="text-foreground">Suivi personnalisé 3 mois</span>
                   </li>
                 </ul>
                 <div className="space-y-3">
-                  <Button variant="accent" className="w-full" size="lg" asChild>
+                  <Button variant="default" className="w-full" size="lg" asChild>
                     <Link to="/formations#packs" onClick={() => window.scrollTo(0, 0)}>
                       En savoir plus <ArrowRight className="ml-2" size={20} />
                     </Link>
                   </Button>
-                  <Button variant="outline" className="w-full bg-white/10 border-white text-white hover:bg-white hover:text-primary" size="lg" asChild>
+                  <Button variant="outline" className="w-full" size="lg" asChild>
                     <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
                       S'inscrire maintenant
                     </Link>
@@ -266,45 +266,45 @@ const Home = () => {
             </Card>
 
             {/* Pack Formation RH */}
-            <Card className="bg-white/10 border-white/20 backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
+            <Card className="bg-white/95 border-white/20 backdrop-blur-sm hover:bg-white transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
-                  <div className="bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
                     Pack Expert
                   </div>
-                  <Users className="text-accent" size={24} />
+                  <Users className="text-primary" size={24} />
                 </div>
-                <CardTitle className="text-2xl text-white">Pack Formation RH</CardTitle>
-                <CardDescription className="text-white/80">
+                <CardTitle className="text-2xl text-primary">Pack Formation RH</CardTitle>
+                <CardDescription className="text-muted-foreground">
                   Formation complète pour les professionnels RH
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center space-x-2">
-                    <CheckCircle size={16} className="text-accent" />
-                    <span className="text-white/90">Formation GRH complète</span>
+                    <CheckCircle size={16} className="text-primary flex-shrink-0" />
+                    <span className="text-foreground">Formation GRH complète</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <CheckCircle size={16} className="text-accent" />
-                    <span className="text-white/90">Outils RH pratiques</span>
+                    <CheckCircle size={16} className="text-primary flex-shrink-0" />
+                    <span className="text-foreground">Outils RH pratiques</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <CheckCircle size={16} className="text-accent" />
-                    <span className="text-white/90">Coaching management</span>
+                    <CheckCircle size={16} className="text-primary flex-shrink-0" />
+                    <span className="text-foreground">Coaching management</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <CheckCircle size={16} className="text-accent" />
-                    <span className="text-white/90">Certification professionnelle</span>
+                    <CheckCircle size={16} className="text-primary flex-shrink-0" />
+                    <span className="text-foreground">Certification professionnelle</span>
                   </li>
                 </ul>
                 <div className="space-y-3">
-                  <Button variant="secondary" className="w-full" size="lg" asChild>
+                  <Button variant="default" className="w-full" size="lg" asChild>
                     <Link to="/formations#packs" onClick={() => window.scrollTo(0, 0)}>
                       Découvrir le pack <ArrowRight className="ml-2" size={20} />
                     </Link>
                   </Button>
-                  <Button variant="outline" className="w-full bg-white/10 border-white text-white hover:bg-white hover:text-primary" size="lg" asChild>
+                  <Button variant="outline" className="w-full" size="lg" asChild>
                     <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
                       Demander un devis
                     </Link>
