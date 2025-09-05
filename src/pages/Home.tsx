@@ -125,7 +125,7 @@ const Home = () => {
                       </li>
                     </ul>
                     <Button variant="default" asChild>
-                      <Link to="/services">En savoir plus</Link>
+                      <Link to="/ressources-humaines">En savoir plus</Link>
                     </Button>
                   </CardContent>
                 </div>
@@ -193,10 +193,111 @@ const Home = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{service.description}</p>
+                  <p className="text-muted-foreground mb-4">{service.description}</p>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link to={service.title === "Conseil & Orientation" ? "/conseil-orientation" : "/formations"}>
+                      Découvrir <ArrowRight className="ml-1" size={16} />
+                    </Link>
+                  </Button>
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section Packs de Formation */}
+      <section className="py-20 bg-gradient-primary text-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Nos Packs de Formation</h2>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+              Des formations complètes conçues pour accélérer votre réussite professionnelle
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Pack Réussite */}
+            <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
+              <CardHeader>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                    Pack Populaire
+                  </div>
+                  <Award className="text-accent" size={24} />
+                </div>
+                <CardTitle className="text-2xl text-white">Pack Réussite</CardTitle>
+                <CardDescription className="text-white/80">
+                  L'essentiel pour décrocher votre emploi idéal
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle size={16} className="text-accent" />
+                    <span className="text-white/90">Formation CV Impactant</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle size={16} className="text-accent" />
+                    <span className="text-white/90">Lettre de motivation efficace</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle size={16} className="text-accent" />
+                    <span className="text-white/90">Préparation entretien d'embauche</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle size={16} className="text-accent" />
+                    <span className="text-white/90">Suivi personnalisé 3 mois</span>
+                  </li>
+                </ul>
+                <Button variant="accent" className="w-full" size="lg" asChild>
+                  <Link to="/formations">
+                    En savoir plus <ArrowRight className="ml-2" size={20} />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Pack Formation RH */}
+            <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
+              <CardHeader>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                    Pack Pro
+                  </div>
+                  <Users className="text-accent" size={24} />
+                </div>
+                <CardTitle className="text-2xl text-white">Pack Formation RH</CardTitle>
+                <CardDescription className="text-white/80">
+                  Formation complète pour les professionnels RH
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle size={16} className="text-accent" />
+                    <span className="text-white/90">Formation GRH complète</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle size={16} className="text-accent" />
+                    <span className="text-white/90">Outils RH pratiques</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle size={16} className="text-accent" />
+                    <span className="text-white/90">Coaching management</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle size={16} className="text-accent" />
+                    <span className="text-white/90">Certification professionnelle</span>
+                  </li>
+                </ul>
+                <Button variant="secondary" className="w-full" size="lg" asChild>
+                  <Link to="/formations">
+                    Découvrir le pack <ArrowRight className="ml-2" size={20} />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
