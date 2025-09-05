@@ -113,15 +113,19 @@ const Home = () => {
                     <ul className="space-y-2 mb-4">
                       <li className="flex items-center space-x-2">
                         <CheckCircle size={16} className="text-accent" />
-                        <span className="text-sm">Formations en GRH</span>
+                        <span className="text-sm">Conseil et audit RH</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <CheckCircle size={16} className="text-accent" />
-                        <span className="text-sm">Conseil en gestion RH</span>
+                        <span className="text-sm">Coaching management et leadership</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <CheckCircle size={16} className="text-accent" />
-                        <span className="text-sm">Coaching management</span>
+                        <span className="text-sm">Conseil en orientation professionnelle</span>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <CheckCircle size={16} className="text-accent" />
+                        <span className="text-sm">Optimisation des processus RH</span>
                       </li>
                     </ul>
                     <Button variant="default" asChild>

@@ -292,15 +292,15 @@ const Eligibility = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label>Niveau de français/anglais *</Label>
+                  <Label>Connaissance du français/anglais *</Label>
                   <Select value={formData.language} onValueChange={(value) => setFormData({...formData, language: value})}>
                     <SelectTrigger>
-                      <SelectValue placeholder="Évaluez votre niveau" />
+                      <SelectValue placeholder="Évaluez votre niveau linguistique" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="basic">Basique</SelectItem>
-                      <SelectItem value="intermediate">Intermédiaire</SelectItem>
-                      <SelectItem value="advanced">Avancé/Courant</SelectItem>
+                      <SelectItem value="basic">Basique (communication simple)</SelectItem>
+                      <SelectItem value="intermediate">Intermédiaire (conversations courantes)</SelectItem>
+                      <SelectItem value="advanced">Avancé/Courant (maîtrise professionnelle)</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

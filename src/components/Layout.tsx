@@ -17,7 +17,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     { name: "Accueil", href: "/" },
     { name: "À propos", href: "/about" },
     { name: "Formations", href: "/formations" },
-    { name: "Test d'éligibilité", href: "/eligibility" },
     { name: "FAQ", href: "/faq" },
     { name: "Contact", href: "/contact" },
   ];
@@ -31,6 +30,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     { name: "Immigration Permanente", href: "/immigration-permanente" },
     { name: "Regroupement Familial", href: "/regroupement-familial" },
     { name: "Études au Canada", href: "/etudes-canada" },
+    { name: "Évaluer votre éligibilité", href: "/eligibility" },
   ];
 
   const isCanadaActive = canadaLinks.some(link => location.pathname === link.href);
@@ -127,7 +127,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             {/* CTA Button */}
             <div className="hidden md:flex items-center space-x-4">
               <Button variant="hero" size="sm" asChild>
-                <Link to="/eligibility" onClick={() => window.scrollTo(0, 0)}>Test gratuit</Link>
+                <Link to="/eligibility" onClick={() => window.scrollTo(0, 0)}>Évaluer votre éligibilité</Link>
               </Button>
             </div>
 
@@ -208,7 +208,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   <Link to="/eligibility" onClick={() => {
                     setIsMenuOpen(false);
                     window.scrollTo(0, 0);
-                  }}>Test gratuit</Link>
+                  }}>Évaluer votre éligibilité</Link>
                 </Button>
               </nav>
             </div>
