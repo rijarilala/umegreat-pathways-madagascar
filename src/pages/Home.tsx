@@ -20,18 +20,6 @@ const Home = () => {
       description: "Regroupement familial, installation durable avec emploi",
       featured: true,
     },
-    {
-      icon: BookOpen,
-      title: "Conseil & Orientation",
-      description: "Bilan de compétences, coaching carrière, préparation entretiens",
-      featured: false,
-    },
-    {
-      icon: Award,
-      title: "Formations",
-      description: "CV, recherche d'emploi, transition professionnelle, LinkedIn",
-      featured: false,
-    },
   ];
 
   const testimonials = [
@@ -69,12 +57,12 @@ const Home = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="accent" size="lg" asChild>
-              <Link to="/eligibility">
+              <Link to="/eligibility" onClick={() => window.scrollTo(0, 0)}>
                 Testez votre éligibilité <ArrowRight className="ml-2" size={20} />
               </Link>
             </Button>
             <Button variant="outline" size="lg" className="bg-white/10 border-white text-white hover:bg-white hover:text-primary" asChild>
-              <Link to="/contact">Contactez-nous</Link>
+              <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contactez-nous</Link>
             </Button>
           </div>
         </div>
@@ -129,7 +117,7 @@ const Home = () => {
                       </li>
                     </ul>
                     <Button variant="default" asChild>
-                      <Link to="/ressources-humaines">En savoir plus</Link>
+                      <Link to="/ressources-humaines" onClick={() => window.scrollTo(0, 0)}>En savoir plus</Link>
                     </Button>
                   </CardContent>
                 </div>
@@ -173,7 +161,7 @@ const Home = () => {
                       </li>
                     </ul>
                     <Button variant="accent" asChild>
-                      <Link to="/eligibility">Tester maintenant</Link>
+                      <Link to="/eligibility" onClick={() => window.scrollTo(0, 0)}>Tester maintenant</Link>
                     </Button>
                   </CardContent>
                 </div>
@@ -221,7 +209,7 @@ const Home = () => {
                       </li>
                     </ul>
                     <Button variant="default" asChild>
-                      <Link to="/formations">Découvrir nos formations</Link>
+                      <Link to="/formations" onClick={() => window.scrollTo(0, 0)}>Découvrir nos formations</Link>
                     </Button>
                   </CardContent>
                 </div>
@@ -232,29 +220,6 @@ const Home = () => {
             </Card>
           </div>
 
-          {/* Autres services */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {services.filter(service => !service.featured).map((service, index) => (
-              <Card key={index} className="hover:shadow-md transition-shadow">
-                <CardHeader>
-                  <div className="flex items-center space-x-3">
-                    <div className="bg-secondary p-3 rounded-lg">
-                      <service.icon className="text-primary" size={24} />
-                    </div>
-                    <CardTitle className="text-lg">{service.title}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">{service.description}</p>
-                  <Button variant="outline" size="sm" asChild>
-                    <Link to={service.title === "Conseil & Orientation" ? "/conseil-orientation" : "/formations"}>
-                      Découvrir <ArrowRight className="ml-1" size={16} />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -533,12 +498,12 @@ const Home = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="accent" size="lg" asChild>
-              <Link to="/eligibility">
+              <Link to="/eligibility" onClick={() => window.scrollTo(0, 0)}>
                 Test d'éligibilité gratuit <ArrowRight className="ml-2" size={20} />
               </Link>
             </Button>
             <Button variant="outline" size="lg" className="bg-white/10 border-white text-white hover:bg-white hover:text-primary" asChild>
-              <Link to="/contact">Demander un devis</Link>
+              <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Demander un devis</Link>
             </Button>
           </div>
         </div>
