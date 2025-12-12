@@ -2,49 +2,37 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Target, Eye, Heart, Users, Globe, Award, ArrowRight } from "lucide-react";
-
 const About = () => {
-  const values = [
-    {
-      icon: Target,
-      title: "Mission",
-      description: "Accompagner les individus et organisations dans leur développement professionnel et leurs projets de vie, avec un focus sur les ressources humaines et l'immigration au Canada."
-    },
-    {
-      icon: Eye,
-      title: "Vision",
-      description: "Être le cabinet de référence à Madagascar pour l'accompagnement RH et l'immigration, reconnu pour son expertise et la qualité de ses services."
-    },
-    {
-      icon: Heart,
-      title: "Valeurs",
-      description: "Excellence, proximité, intégrité et engagement. Nous croyons en un accompagnement personnalisé et professionnel pour chaque client."
-    }
-  ];
-
-  const expertise = [
-    {
-      icon: Users,
-      title: "Expertise RH",
-      description: "Plus de 10 ans d'expérience en gestion des ressources humaines, formation et développement organisationnel.",
-      stats: "50+ entreprises accompagnées"
-    },
-    {
-      icon: Globe,
-      title: "Immigration Canada", 
-      description: "Spécialisation dans les processus d'immigration canadienne avec un taux de réussite élevé.",
-      stats: "200+ dossiers traités"
-    },
-    {
-      icon: Award,
-      title: "Formations certifiantes",
-      description: "Programmes de formation reconnus et adaptés aux besoins du marché local et international.",
-      stats: "1000+ personnes formées"
-    }
-  ];
-
-  return (
-    <div className="space-y-0">
+  const values = [{
+    icon: Target,
+    title: "Mission",
+    description: "Accompagner les individus et organisations dans leur développement professionnel et leurs projets de vie, avec un focus sur les ressources humaines et l'immigration au Canada."
+  }, {
+    icon: Eye,
+    title: "Vision",
+    description: "Être le cabinet de référence à Madagascar pour l'accompagnement RH et l'immigration, reconnu pour son expertise et la qualité de ses services."
+  }, {
+    icon: Heart,
+    title: "Valeurs",
+    description: "Excellence, proximité, intégrité et engagement. Nous croyons en un accompagnement personnalisé et professionnel pour chaque client."
+  }];
+  const expertise = [{
+    icon: Users,
+    title: "Expertise RH",
+    description: "Plus de 10 ans d'expérience en gestion des ressources humaines, formation et développement organisationnel.",
+    stats: "50+ entreprises accompagnées"
+  }, {
+    icon: Globe,
+    title: "Immigration Canada",
+    description: "Spécialisation dans les processus d'immigration canadienne avec un taux de réussite élevé.",
+    stats: "200+ dossiers traités"
+  }, {
+    icon: Award,
+    title: "Formations certifiantes",
+    description: "Programmes de formation reconnus et adaptés aux besoins du marché local et international.",
+    stats: "1000+ personnes formées"
+  }];
+  return <div className="space-y-0">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-hero text-primary-foreground">
         <div className="container mx-auto px-4">
@@ -70,8 +58,7 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {values.map((value, index) => (
-              <Card key={index} className="text-center border-none shadow-elegant hover:shadow-glow transition-all duration-300">
+            {values.map((value, index) => <Card key={index} className="text-center border-none shadow-elegant hover:shadow-glow transition-all duration-300">
                 <CardHeader>
                   <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit mb-4">
                     <value.icon className="text-primary" size={32} />
@@ -81,8 +68,7 @@ const About = () => {
                 <CardContent>
                   <p className="text-muted-foreground">{value.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -98,8 +84,7 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {expertise.map((item, index) => (
-              <Card key={index} className="border-primary/20 hover:shadow-elegant transition-all duration-300">
+            {expertise.map((item, index) => <Card key={index} className="border-primary/20 hover:shadow-elegant transition-all duration-300">
                 <CardHeader>
                   <div className="flex items-center space-x-3 mb-4">
                     <div className="bg-accent/10 p-3 rounded-lg">
@@ -110,12 +95,9 @@ const About = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">{item.description}</p>
-                  <div className="bg-primary/5 p-3 rounded-lg">
-                    <p className="text-sm font-semibold text-primary">{item.stats}</p>
-                  </div>
+                  
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -211,8 +193,6 @@ const About = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default About;
