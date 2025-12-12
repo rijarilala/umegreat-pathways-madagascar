@@ -9,57 +9,54 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 213 100% 8%;
+    --foreground: 209 73% 22%;
 
     --card: 0 0% 100%;
-    --card-foreground: 213 100% 8%;
+    --card-foreground: 209 73% 22%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 213 100% 8%;
+    --popover-foreground: 209 73% 22%;
 
-    --primary: 213 100% 15%;
-    --primary-rgb: 0, 39, 77;
+    /* Bleu principal du logo UMEGREAT */
+    --primary: 209 73% 22%;
+    --primary-rgb: 15, 58, 102;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 213 15% 95%;
-    --secondary-foreground: 213 100% 15%;
+    /* Bleu clair fond */
+    --secondary: 198 60% 90%;
+    --secondary-foreground: 209 73% 22%;
 
-    --muted: 213 15% 95%;
-    --muted-foreground: 213 15% 45%;
+    --muted: 198 40% 95%;
+    --muted-foreground: 209 30% 45%;
 
-    --accent: 20 95% 55%;
+    /* Orange "PRO" du logo */
+    --accent: 22 79% 49%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 213 25% 90%;
-    --input: 213 25% 90%;
-    --ring: 213 100% 15%;
+    --border: 198 30% 88%;
+    --input: 198 30% 88%;
+    --ring: 209 73% 22%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(213 100% 15%), hsl(213 85% 25%));
-    --gradient-primary: linear-gradient(135deg, hsl(213 100% 15%), hsl(213 85% 25%));
-    --gradient-accent: linear-gradient(135deg, hsl(20 95% 55%), hsl(25 90% 60%));
-    --shadow-elegant: 0 10px 40px -15px hsl(213 100% 15% / 0.3);
-    --shadow-glow: 0 0 30px hsl(20 95% 55% / 0.4);
+    /* Gradients basés sur la palette du logo */
+    --gradient-hero: linear-gradient(135deg, hsl(209 73% 22%), hsl(209 60% 35%));
+    --gradient-primary: linear-gradient(135deg, hsl(209 73% 22%), hsl(209 60% 35%));
+    --gradient-accent: linear-gradient(135deg, hsl(22 79% 49%), hsl(28 85% 55%));
+    --shadow-elegant: 0 10px 40px -15px hsl(209 73% 22% / 0.25);
+    --shadow-glow: 0 0 30px hsl(22 79% 49% / 0.4);
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-foreground: 209 30% 30%;
+    --sidebar-primary: 209 73% 22%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 198 60% 95%;
+    --sidebar-accent-foreground: 209 73% 22%;
+    --sidebar-border: 198 30% 88%;
+    --sidebar-ring: 209 73% 22%;
   }
 
   .dark {

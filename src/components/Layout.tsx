@@ -46,16 +46,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3">
+            <Link to="/" className="flex items-center space-x-2">
               <img 
-                src="/lovable-uploads/e6db913e-20f5-43fb-8d43-b731c331b66d.png" 
-                alt="UMEGREAT PRO" 
-                className="h-12 w-12 object-contain"
+                src="/logo-umegreat-pro.png" 
+                alt="UMEGREAT PRO - Cabinet conseil RH et Immigration Canada" 
+                className="h-14 w-auto object-contain"
               />
-              <div>
-                <h1 className="font-bold text-lg text-primary">UMEGREAT PRO</h1>
-                <p className="text-xs text-muted-foreground">Cabinet conseil</p>
-              </div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -236,11 +232,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <img 
-                  src="/lovable-uploads/e6db913e-20f5-43fb-8d43-b731c331b66d.png" 
-                  alt="UMEGREAT PRO" 
-                  className="h-10 w-10 object-contain"
+                  src="/logo-umegreat-pro.png" 
+                  alt="UMEGREAT PRO - Cabinet conseil RH et Immigration Canada" 
+                  className="h-12 w-auto object-contain"
                 />
-                <h3 className="font-bold text-lg">UMEGREAT PRO</h3>
               </div>
               <p className="text-primary-foreground/80 text-sm">
                 Ensemble vers la vie que vous méritez
